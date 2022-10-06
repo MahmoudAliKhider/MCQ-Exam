@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   constructor(private fb:FormBuilder ,private service:AuthService  , private router:Router , private toaster:ToastrService) { }
   ngOnInit(): void {
   this.creatForm();
+ this.getAllUser();
 
   }
 
@@ -26,6 +27,11 @@ export class RegisterComponent implements OnInit {
     confirmpasswprd:['',Validators.required],
   })
  }
+getAllUser(){
+  this.service.getUsers().subscribe((res:any)=>{
+    this.students=res
+  })
+}
 
  submit(){
   const model ={
@@ -34,6 +40,7 @@ export class RegisterComponent implements OnInit {
     password:this.userForm.value.password,
 
   }
+  //to check if email already exist
   let index = this.students.findIndex(item=> item.email == this.userForm.value.email)
  if (index !== -1){
   this.toaster.error("الايميل موجود مسبقا" , "" , {
