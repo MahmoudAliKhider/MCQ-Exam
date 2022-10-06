@@ -21,6 +21,10 @@ export class AuthService {
   getUsers(type:string){
     return this.http.get(environment.baseApi+type)
   }
+  getRole(){
+    return this.http.get(environment.baseApi+'login/1')
+
+  }
 
 
 }

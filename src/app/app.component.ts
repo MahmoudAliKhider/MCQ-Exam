@@ -16,9 +16,9 @@ export class AppComponent implements OnInit {
 
 
   getUserDate() {
-    // this.service.getRole().subscribe(res => {
-    //   this.service.user.next(res)
-    // }) 
+    this.service.getRole().subscribe(res => {
+      this.service.user.next(res)
+    }) 
   }
 
 }
