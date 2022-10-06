@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
   })
  }
 getAllUser(){
-  this.service.getUsers().subscribe((res:any)=>{
+  this.service.getUsers('students').subscribe((res:any)=>{
     this.students=res
   })
 }

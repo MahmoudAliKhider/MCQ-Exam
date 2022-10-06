@@ -18,6 +18,8 @@
   "subjects": [],
   "login": [
     {
+      "role": "doctor",
+      "username": "admin",
       "id": 1
     }
   ]
