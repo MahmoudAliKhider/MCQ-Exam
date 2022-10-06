@@ -11,11 +11,11 @@ export class NavbarComponent implements OnInit {
   constructor(private service:AuthService) { }
   user:any = null
   ngOnInit(): void {
-  //  this.service.user.subscribe((res:any) => {
-  //    if(res.role) {
-  //      this.user = res
-  //    }
-  //  })
+   this.service.user.subscribe((res:any) => {
+     if(res.role) {
+       this.user = res
+     }
+   })
   }
 
 
