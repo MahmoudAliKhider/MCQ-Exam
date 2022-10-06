@@ -15,9 +15,68 @@
       "id": 1
     }
   ],
-  "subjects": [],
+  "subjects": [
+    {
+      "name": "Match",
+      "question": [
+        {
+          "question": "3=6",
+          "answer1": "yes",
+          "answer2": "no",
+          "answer3": "6",
+          "answer4": "1 2and ",
+          "correctAnswer": "no"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "name": "math",
+      "question": [
+        {
+          "question": "5*5",
+          "answer1": "25",
+          "answer2": "78",
+          "answer3": "789",
+          "answer4": "78",
+          "correctAnswer": "25"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "name": "math",
+      "question": [
+        {
+          "question": "3*3",
+          "answer1": "9",
+          "answer2": "45",
+          "answer3": "45",
+          "answer4": "10",
+          "correctAnswer": "9"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "name": "math",
+      "question": [
+        {
+          "question": "3*3",
+          "answer1": "9",
+          "answer2": "45",
+          "answer3": "45",
+          "answer4": "10",
+          "correctAnswer": "9"
+        }
+      ],
+      "id": 11
+    }
+  ],
   "login": [
     {
+      "role": "doctor",
+      "username": "admin",
       "id": 1
     }
   ]

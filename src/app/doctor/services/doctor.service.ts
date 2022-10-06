@@ -9,5 +9,7 @@ export class DoctorService {
 
   constructor(private http:HttpClient) { }
 
- 
+ creatsubject(model:any){
+  return this.http.post(environment.baseApi+'subjects',model)
+ }
 }
