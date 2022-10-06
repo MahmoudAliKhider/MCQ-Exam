@@ -12,11 +12,12 @@ export class NewExamComponent implements OnInit {
 
 name=new FormControl("")
 QuestionForm!:FormGroup
-question:any[]=[]
+questions:any[]=[]
 correctNum:any
 startAdd:boolean=false;
 previw:boolean=false
-subjectName=""
+subjectName="";
+id:any
   constructor(private fb:FormBuilder , private toaster:ToastrService , private service:DoctorService) { }
 
   ngOnInit(): void {
@@ -54,7 +55,7 @@ if(this.correctNum){
     answer4 : this.QuestionForm.value.answer4,
     correctAnswer:this.QuestionForm.value[this.correctNum],//.valur[]=>لانو متغير
   }
-  this.question.push(model);
+  this.questions.push(model);
   //بقولو فضيلي الفورم
   this.QuestionForm.reset();
 }else{
@@ -66,7 +67,7 @@ if(this.correctNum){
     closeButton: true,
 })
 }
-console.log(this.question)
+console.log(this.questions)
 }
 //الي هيحصلوا تغيير خزنو عندي
 
@@ -80,7 +81,7 @@ clearForm(){
 
 cancle(){
   this.QuestionForm.reset()
-  this.question = [];
+  this.questions = [];
   this.subjectName = "";
   this.name.reset();
 
@@ -89,11 +90,25 @@ cancle(){
 
 submit(){
 const model={
+
   name:this.subjectName,
-  question:this.question
+  question:this.questions
 }
-this.service.creatsubject(model).subscribe(res=>{
-  this.previw=true;
+if(!this.previw){
+  this.service.creatsubject(model).subscribe((res:any)=>{
+    this.previw=true;
+    this.id=res.id
+  })
+}}
+
+delete(index:any){
+this.questions.splice(index,1)
+const model={
+  name:this.subjectName,
+  question:this.questions
+}
+this.service.updateSubject(model,this.id).subscribe(res=>{
+  this.toaster.success("تم حذف السؤال بنجاح")
 })
 }
 }

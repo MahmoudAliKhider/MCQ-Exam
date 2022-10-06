@@ -12,4 +12,8 @@ export class DoctorService {
  creatsubject(model:any){
   return this.http.post(environment.baseApi+'subjects',model)
  }
+ updateSubject(model:any,id:number){
+  return this.http.put(environment.baseApi+'subjects/'+id,model)
+
+ }
 }

@@ -34,43 +34,20 @@
       "name": "math",
       "question": [
         {
-          "question": "5*5",
-          "answer1": "25",
-          "answer2": "78",
-          "answer3": "789",
-          "answer4": "78",
-          "correctAnswer": "25"
+          "question": "(5*4-)2",
+          "answer1": "7-",
+          "answer2": "40",
+          "answer3": "22",
+          "answer4": "40-",
+          "correctAnswer": "40-"
         }
       ],
-      "id": 9
+      "id": 7
     },
     {
-      "name": "math",
-      "question": [
-        {
-          "question": "3*3",
-          "answer1": "9",
-          "answer2": "45",
-          "answer3": "45",
-          "answer4": "10",
-          "correctAnswer": "9"
-        }
-      ],
-      "id": 10
-    },
-    {
-      "name": "math",
-      "question": [
-        {
-          "question": "3*3",
-          "answer1": "9",
-          "answer2": "45",
-          "answer3": "45",
-          "answer4": "10",
-          "correctAnswer": "9"
-        }
-      ],
-      "id": 11
+      "name": "عربي",
+      "question": [],
+      "id": 8
     }
   ],
   "login": [
