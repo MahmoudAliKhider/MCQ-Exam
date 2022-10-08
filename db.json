@@ -17,32 +17,18 @@
   ],
   "subjects": [
     {
-      "name": "math",
+      "name": "رياضيات",
       "question": [
         {
-          "question": "(5*4-)2",
-          "answer1": "7-",
-          "answer2": "40",
-          "answer3": "22",
-          "answer4": "40-",
-          "correctAnswer": "40-"
+          "question": "2+6",
+          "answer1": "8",
+          "answer2": "7",
+          "answer3": "4",
+          "answer4": "9",
+          "correctAnswer": "8"
         }
       ],
-      "id": 7
-    },
-    {
-      "name": "عربي",
-      "question": [
-        {
-          "question": "معني الفراق",
-          "answer1": "المغادرق",
-          "answer2": "الابتعاد",
-          "answer3": "الاشتياق",
-          "answer4": "A&B",
-          "correctAnswer": "A&B"
-        }
-      ],
-      "id": 8
+      "id": 9
     }
   ],
   "login": [

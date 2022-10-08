@@ -13,6 +13,7 @@ export class ExamComponent implements OnInit {
 
 id:any;
 subject:any
+user:any
   constructor(private route:ActivatedRoute , private service:DoctorService ,private auth :AuthService,
      private toaster:ToastrService) {
   this.id = route.snapshot.paramMap.get('id');
@@ -22,6 +23,7 @@ subject:any
 
 
   ngOnInit(): void {
+    this.getUserInfo()
   }
 
   getSubjects(){
@@ -29,5 +31,22 @@ subject:any
       this.subject=res
     })
   }
+
+  delete(index:any){
+     this.subject.question.splice(index,1)
+     const model={
+       name:this.subject.name,
+      question:this.subject.question
+     }
+    this.service.updateSubject(model,this.id).subscribe(res=>{
+      this.toaster.success("تم حذف السؤال بنجاح")
+    })
+    }
+
+    getUserInfo(){
+      this.auth.getRole().subscribe((res)=>{
+        this.user=res;
+      })
+    }
 
 }
