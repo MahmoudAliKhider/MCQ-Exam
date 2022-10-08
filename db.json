@@ -29,12 +29,42 @@
         }
       ],
       "id": 9
+    },
+    {
+      "name": "عربي",
+      "question": [
+        {
+          "question": "ما معني يقدر",
+          "answer1": "يستطيع",
+          "answer2": "ميستطعش",
+          "answer3": "يهبل",
+          "answer4": "ههههه",
+          "correctAnswer": "يستطيع"
+        },
+        {
+          "question": "الاكسترا تيم قريب ةلاكن احزن K.O القاضية",
+          "answer1": "مستحيل",
+          "answer2": "ممكن",
+          "answer3": "ممكن اوي",
+          "answer4": "ممكن او او او ",
+          "correctAnswer": "مستحيل"
+        },
+        {
+          "question": "فما حاجة فما حاجة مدريد ",
+          "answer1": "العلم",
+          "answer2": "الروح",
+          "answer3": "الروح كمان ",
+          "answer4": "العشق",
+          "correctAnswer": "الروح"
+        }
+      ],
+      "id": 10
     }
   ],
   "login": [
     {
-      "role": "doctor",
-      "username": "admin",
+      "role": "students",
+      "username": "test",
       "id": 1
     }
   ]

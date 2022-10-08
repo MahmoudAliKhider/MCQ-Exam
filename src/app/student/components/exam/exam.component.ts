@@ -13,12 +13,14 @@ export class ExamComponent implements OnInit {
 
 id:any;
 subject:any
-user:any
+user:any;
+total:number=0;
+showResult:boolean=false
   constructor(private route:ActivatedRoute , private service:DoctorService ,private auth :AuthService,
      private toaster:ToastrService) {
   this.id = route.snapshot.paramMap.get('id');
   this.getSubjects()
-  console.log(this.id)
+  //console.log(this.id)
    }
 
 
@@ -49,4 +51,25 @@ user:any
       })
     }
 
+    getAnswer(event:any){
+      let value = event.value,
+       questionIndex = event.source.name;
+
+       //اضيف اجابة جديدة لل Array Subject
+       this.subject.question[questionIndex].studentAnswer =  value;
+      console.log(this.subject.question)
+    }
+
+
+    getResult(){
+      this.total=0;
+      for(let x in this.subject.question){
+        if(this.subject.question[x].studentAnswer == this.subject.question[x].correctAnswer){
+         ++this.total
+        }
+      }
+      this.showResult=true;
+      console.log(this.total)
+
+    }
 }
