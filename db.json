@@ -29,6 +29,20 @@
         }
       ],
       "id": 7
+    },
+    {
+      "name": "عربي",
+      "question": [
+        {
+          "question": "معني الفراق",
+          "answer1": "المغادرق",
+          "answer2": "الابتعاد",
+          "answer3": "الاشتياق",
+          "answer4": "A&B",
+          "correctAnswer": "A&B"
+        }
+      ],
+      "id": 8
     }
   ],
   "login": [

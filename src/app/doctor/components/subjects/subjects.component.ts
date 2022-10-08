@@ -32,7 +32,8 @@ delete(index:number){
 let id = this.subjects[index].id;
 this.subjects.splice(index,1);
 this.service.deleteSubject(id).subscribe((res:any)=>{
-  this.subjects=res
+  
+  this.toaster.success('تم الحذف بنجاح')
 })
 }
 
