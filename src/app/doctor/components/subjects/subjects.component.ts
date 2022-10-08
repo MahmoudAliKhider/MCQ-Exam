@@ -9,12 +9,17 @@ import { DoctorService } from '../../services/doctor.service';
   styleUrls: ['./subjects.component.scss']
 })
 export class SubjectsComponent implements OnInit {
-
+  subjects:any[]=[]
   constructor(private service:DoctorService , private auth:AuthService , private toaster:ToastrService) { }
 
   ngOnInit(): void {
-
+  this.getSubject();
+  }
+  getSubject(){
+    this.service.getAllSubject().subscribe((res:any)=>{
+      this.subjects = res;
+    })
   }
 
- 
+
 }

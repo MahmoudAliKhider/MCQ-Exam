@@ -16,4 +16,8 @@ export class DoctorService {
   return this.http.put(environment.baseApi+'subjects/'+id,model)
 
  }
+ getAllSubject(){
+  return this.http.get(environment.baseApi+'subjects')
+
+ }
 }
