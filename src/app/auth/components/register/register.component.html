@@ -35,7 +35,7 @@
   </div>
 <div class="text-right registfoot">
     <a routerLink="/login" color="primary">املك حساب بالفعل ؟</a>
-      <button mat-raised-button color="warn"[disabled]="userForm.invalid || (userForm.value.password !== userForm.value.confirmpasswprd)" (click)="submit()"type="submit">انشاء الحساب</button>
+      <button mat-raised-button color="primary"[disabled]="userForm.invalid || (userForm.value.password !== userForm.value.confirmpasswprd)" (click)="submit()"type="submit">انشاء الحساب</button>
 </div>
 </form>
 </div>

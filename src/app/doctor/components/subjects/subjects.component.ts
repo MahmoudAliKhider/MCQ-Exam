@@ -10,16 +10,31 @@ import { DoctorService } from '../../services/doctor.service';
 })
 export class SubjectsComponent implements OnInit {
   subjects:any[]=[]
+  user:any={}
   constructor(private service:DoctorService , private auth:AuthService , private toaster:ToastrService) { }
 
   ngOnInit(): void {
   this.getSubject();
+  this.getUserInfo();
   }
   getSubject(){
     this.service.getAllSubject().subscribe((res:any)=>{
       this.subjects = res;
     })
   }
+
+getUserInfo(){
+  this.auth.getRole().subscribe((res)=>{
+    this.user=res;
+  })
+}
+delete(index:number){
+let id = this.subjects[index].id;
+this.subjects.splice(index,1);
+this.service.deleteSubject(id).subscribe((res:any)=>{
+  this.subjects=res
+})
+}
 
 
 }

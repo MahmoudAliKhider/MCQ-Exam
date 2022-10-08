@@ -17,20 +17,6 @@
   ],
   "subjects": [
     {
-      "name": "Match",
-      "question": [
-        {
-          "question": "3=6",
-          "answer1": "yes",
-          "answer2": "no",
-          "answer3": "6",
-          "answer4": "1 2and ",
-          "correctAnswer": "no"
-        }
-      ],
-      "id": 6
-    },
-    {
       "name": "math",
       "question": [
         {
@@ -43,25 +29,6 @@
         }
       ],
       "id": 7
-    },
-    {
-      "name": "عربي",
-      "question": [],
-      "id": 8
-    },
-    {
-      "name": "test",
-      "question": [
-        {
-          "question": "test@test.com",
-          "answer1": "A",
-          "answer2": "B",
-          "answer3": "C",
-          "answer4": "D",
-          "correctAnswer": "B"
-        }
-      ],
-      "id": 9
     }
   ],
   "login": [
