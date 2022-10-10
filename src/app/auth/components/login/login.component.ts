@@ -58,6 +58,7 @@ login(){
   const model={
   role:this.type,
   username:this.users[index].username,
+  userId:this.users[index].id,
   }
   this.service.login(model).subscribe(res => {
     this.service.user.next(res)

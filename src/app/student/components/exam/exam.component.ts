@@ -14,8 +14,10 @@ export class ExamComponent implements OnInit {
 id:any;
 subject:any
 user:any;
+studentInfo:any;
 total:number=0;
-showResult:boolean=false
+showResult:boolean=false;
+userSubject:any[]=[]
   constructor(private route:ActivatedRoute , private service:DoctorService ,private auth :AuthService,
      private toaster:ToastrService) {
   this.id = route.snapshot.paramMap.get('id');
@@ -48,6 +50,14 @@ showResult:boolean=false
     getUserInfo(){
       this.auth.getRole().subscribe((res)=>{
         this.user=res;
+        this.getUserData();
+      })
+    }
+
+    getUserData(){
+      this.auth.getStudent(this.user.userId).subscribe((res:any)=>{
+        this.studentInfo=res;
+         this.userSubject = res?.subjects ? res?.subjects : []
       })
     }
 
@@ -69,7 +79,20 @@ showResult:boolean=false
         }
       }
       this.showResult=true;
-      console.log(this.total)
+   this.userSubject.push({
+    name:this.subject.name,
+    id:this.id,
+    degree:this.total
+  })
+      const model={
+        username:this.studentInfo.username,
+        email:this.studentInfo.email,
+        password:this.studentInfo.password,
+        subjects:this.userSubject
+      }
+      this.auth.updateStudent(this.user.userId,model).subscribe(res=>{
+        this.toaster.success('تم تسجيل النتيجة بنجاح')
+      })
 
     }
 }
