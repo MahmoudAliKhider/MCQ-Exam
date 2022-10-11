@@ -18,6 +18,7 @@ studentInfo:any;
 total:number=0;
 showResult:boolean=false;
 userSubject:any[]=[]
+validExam:boolean=true;
   constructor(private route:ActivatedRoute , private service:DoctorService ,private auth :AuthService,
      private toaster:ToastrService) {
   this.id = route.snapshot.paramMap.get('id');
@@ -57,8 +58,22 @@ userSubject:any[]=[]
     getUserData(){
       this.auth.getStudent(this.user.userId).subscribe((res:any)=>{
         this.studentInfo=res;
-         this.userSubject = res?.subjects ? res?.subjects : []
+         this.userSubject = res?.subjects ? res?.subjects : [];
+         this.checkValidExam()
       })
+    }
+
+    checkValidExam(){
+      for(let x in this.userSubject){
+        if(this.userSubject[x].id == this.id){
+
+          this.total = this.userSubject[x].degree
+          this.validExam = false;
+          this.toaster.warning('لقد اجتزت الاختبار مسبقا')
+        }
+      }
+      //console.log(this.validExam)
+
     }
 
     getAnswer(event:any){
