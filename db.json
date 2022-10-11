@@ -15,9 +15,26 @@
           "id": "9",
           "degree": 1
         }
-
       ],
       "id": 1
+    },
+    {
+      "username": "Mahmoud",
+      "email": "mah@gmail.com",
+      "password": "1234",
+      "subjects": [
+        {
+          "name": "عربي",
+          "id": "10",
+          "degree": 1
+        },
+        {
+          "name": "رياضيات",
+          "id": "9",
+          "degree": 0
+        }
+      ],
+      "id": 2
     }
   ],
   "doctor": [
@@ -76,8 +93,8 @@
   ],
   "login": [
     {
-      "role": "students",
-      "username": "test",
+      "role": "doctor",
+      "username": "admin",
       "userId": 1,
       "id": 1
     }
